@@ -2,25 +2,22 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/index.ts",
-      "use": "@vercel/node@5.3.5",
-      "config": {
-        "includeFiles": ["dist/**"]
-      }
+      "src": "api/index.js",
+      "use": "@vercel/node@5.3.5"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "api/index.ts"
+      "dest": "api/index.js"
     }
   ],
+  "functions": {
+    "api/index.js": {
+      "maxDuration": 30
+    }
+  },
   "env": {
     "NODE_ENV": "production"
-  },
-  "framework": null,
-  "installCommand": "bun install",
-  "buildCommand": "bun run build",
-  "devCommand": "bun run dev",
-  "outputDirectory": "dist"
+  }
 }
