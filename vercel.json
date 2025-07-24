@@ -15,17 +15,9 @@
       "dest": "api/index.ts"
     }
   ],
-  "functions": {
-    "api/index.ts": {
-      "maxDuration": 30,
-      "memory": 1024,
-      "runtime": "nodejs22.x"
-    }
-  },
   "env": {
     "NODE_ENV": "production"
   },
-  "regions": ["iad1"],
   "framework": null,
   "installCommand": "bun install",
   "buildCommand": "bun run build",
