@@ -1,0 +1,51 @@
+{
+  "name": "create-express-server-2025",
+  "version": "1.0.1",
+  "description": "A production ready backend server created on express.js to host on vercel",
+  "module": "src/server.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "bun run --watch src/server.ts",
+    "build": "bun run build:clean && bun run build:compile",
+    "build:clean": "rm -rf dist",
+    "build:compile": "tsc",
+    "start": "bun run dist/server.js",
+    "start:prod": "NODE_ENV=production bun run dist/server.js",
+    "type-check": "tsc --noEmit",
+    "vercel:dev": "vercel dev",
+    "deploy": "bun run build && vercel --prod",
+    "deploy:preview": "bun run build && vercel",
+    "format": "bunx prettier --write .",
+    "lint": "bunx eslint src/**/*.ts"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.31.0",
+    "@types/bun": "latest",
+    "@types/express": "^5.0.3",
+    "@vercel/node": "^5.3.6",
+    "eslint": "^9.31.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^16.3.0",
+    "prettier": "^3.6.2",
+    "typescript-eslint": "^8.38.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "dotenv": "16.5.0",
+    "express": "^5.1.0"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "mysql",
+    "redis",
+    "typescript",
+    "bun",
+    "vercel",
+    "postgres",
+    "sequelize"
+  ]
+}
